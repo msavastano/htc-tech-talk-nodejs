@@ -1,11 +1,7 @@
 const fs = require('fs');
 
-const thisIsTheCB = (f) => {
-    console.log(f);
-};
-
-// Call Back Hell
-const readFiles = (cb) => {
+// CallBack Hell
+const readFiles = () => {
     let fullFile = '';
     fs.readFile('./index.1.html', function (err, data) {
         if (err) {
@@ -22,10 +18,10 @@ const readFiles = (cb) => {
                     throw err;
                 }
                 fullFile += data2
-                cb(fullFile);
+                console.log(fullFile);
             });
         });
     });
 }
 
-readFiles(thisIsTheCB);
+readFiles();

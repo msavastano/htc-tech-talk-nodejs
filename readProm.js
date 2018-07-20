@@ -1,5 +1,6 @@
 const fs = require('fs');
 
+// 3 Promises
 const rf1 = () => {
   return new Promise((resolve, reject) => {
     fs.readFile('./index.1.html', function (err, data) {
@@ -41,7 +42,7 @@ const readFiles = () => {
   //   });
 
   let final = '';
-  rf1()
+  return rf1()
     .then((r2) => {
       final+=r2;
       return rf2();
